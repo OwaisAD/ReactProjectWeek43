@@ -21,7 +21,7 @@ const InputBookComponent = ({bookFacade, books, setBooks}) => {
 
   return (
     <div className='BookComponentDiv'>
-      <p>Add a book in the system:</p>
+      <h3>Add a book:</h3>
       <form onSubmit={handleSubmit}>
             <input id="title" type="text" placeholder='Book title' required onChange={update}/> <br />
             <input id="author" type="text" placeholder='Book author' required onChange={update}/> <br />

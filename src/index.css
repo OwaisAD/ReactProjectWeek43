@@ -6,7 +6,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #2c2c2c;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -43,7 +43,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #0b0b0b;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -60,6 +60,7 @@ button:focus-visible {
   background-color: rgba(123, 63, 63, 0.87);
   padding: 20px;
   margin: 2px;
+  max-height: 350px;
 }
 
 .AllBooksComponent {
