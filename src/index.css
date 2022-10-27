@@ -68,3 +68,18 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.BookComponentDiv {
+  background-color: rgba(123, 63, 63, 0.87);
+  padding: 20px;
+}
+
+.AllBooksComponent {
+  background-color: rgba(159, 94, 94, 0.87);
+  padding: 20px;
+}
+
+.ioComp {
+  display: flex;
+  flex-direction: row;
+}
