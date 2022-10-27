@@ -2,18 +2,18 @@ import React from 'react'
 import InputBookComponent from './InputBookComponent'
 import AllBooksComponent from './AllBooksComponent'
 
-const BookPublisher = () => {
+const BookPublisher = (props) => {
   return (
     <div>
-        <div>
-            <p>Logged in as: XXXX</p>
+        <div className='loginStatus'>
+            <h4>Logged in as: Admin</h4>
             <button>Logout</button>
         </div>
         <h2>Book Publisher</h2>
-        <p>Current book count: XXXX</p>
+        <p>Current book count: {props.books.length}</p>
         <div className='ioComp'>
-            <InputBookComponent />
-            <AllBooksComponent />
+            <InputBookComponent bookFacade={props.bookFacade} books={props.books} setBooks={props.setBooks}/>
+            <AllBooksComponent books={props.books} bookFacade={props.bookFacade}/>
         </div>
     </div>
   )
