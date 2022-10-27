@@ -13,7 +13,7 @@ const BookPublisher = (props) => {
         <p>Current book count: {props.books.length}</p>
         <div className='ioComp'>
             <InputBookComponent bookFacade={props.bookFacade} books={props.books} setBooks={props.setBooks}/>
-            <AllBooksComponent books={props.books} bookFacade={props.bookFacade}/>
+            <AllBooksComponent books={props.books} setBook={props.setBooks} bookFacade={props.bookFacade}/>
         </div>
     </div>
   )

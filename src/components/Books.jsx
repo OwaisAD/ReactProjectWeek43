@@ -1,11 +1,11 @@
 import React from 'react'
 import Book from './Book'
 
-const Books = ({books}) => {
+const Books = ({books, setBooks, bookFacade}) => {
   return (
     <>
         {books.map(book => {
-            return <Book key={book.id} book={book}/>
+            return <Book key={book.id} book={book} setBook={setBooks} bookFacade={bookFacade}/>
         })}
     </>
   )
