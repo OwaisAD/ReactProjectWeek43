@@ -14,9 +14,6 @@ const BookPublisher = (props) => {
     year_published: "",
   });
 
-  useEffect(() => {
-    console.log(props.books, "bookPublisher")
-  })
 
   return (
     <div>
@@ -26,10 +23,11 @@ const BookPublisher = (props) => {
       </div>
       <h1>Book Publisher</h1>
       <h2>
-        Current book count:{" "}
+        Found{" "}
         <div className="circle">
           <div className="bookCount">{props.books.length}</div>
         </div>
+        {props.books.length === 1 ? " book" : " books"}
       </h2>
       <div className="ioComp">
         <InputBookComponent
@@ -49,6 +47,8 @@ const BookPublisher = (props) => {
           bookFacade={props.bookFacade}
           setEditMode={setEditMode}
           setHasChanged={props.setHasChanged}
+          setIsSearchQuery={props.setIsSearchQuery}
+          setSearchResult={props.setSearchResult}
         />
       </div>
     </div>
