@@ -2,7 +2,6 @@ import React from "react";
 import InputBookComponent from "./InputBookComponent";
 import AllBooksComponent from "./AllBooksComponent";
 import { useState } from "react";
-import { useEffect } from "react";
 
 const BookPublisher = (props) => {
   const [editMode, setEditMode] = useState(false);
@@ -13,10 +12,6 @@ const BookPublisher = (props) => {
     rating: "",
     year_published: "",
   });
-
-  useEffect(() => {
-    console.log(props.books, "bookPublisher")
-  })
 
   return (
     <div>
