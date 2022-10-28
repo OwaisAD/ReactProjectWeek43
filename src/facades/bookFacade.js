@@ -50,6 +50,11 @@ const deleteBook = async (id) => {
         .then(handleHttpErrors)
 }
 
+const getBookByName = async (property, title) => {
+    return await fetch(`http://localhost:4000/books?${property}=${title}`)
+        .then(handleHttpErrors)
+}
+
 // we make a userFacade object consisting of all our methods
 // we don't need to write properties and names both, because their names are the same
 const bookFacade = {
@@ -58,6 +63,7 @@ const bookFacade = {
     createBook,
     updateBook,
     deleteBook,
+    getBookByName,
 }
 
 //then we export the object for use elsewhere
