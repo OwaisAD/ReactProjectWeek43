@@ -7,14 +7,16 @@ import bookFacade from './facades/bookFacade'
 
 function App() {
   const [books, setBooks] = useState([])
+  const[hasChanged, setHasChanged] = useState(false)
 
   useEffect(() => {
     bookFacade.getAllBooks().then(data => setBooks(data))
-  }, [])
+    setHasChanged(false)
+  }, [hasChanged])
 
   return (
     <div className="App">
-        <BookPublisher books={books} bookFacade={bookFacade} setBooks={setBooks}/>
+        <BookPublisher books={books} bookFacade={bookFacade} setBooks={setBooks} setHasChanged={setHasChanged}/>
     </div>
   )
 }

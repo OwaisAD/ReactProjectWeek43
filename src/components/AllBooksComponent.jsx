@@ -1,7 +1,7 @@
 import React from 'react'
 import Books from './Books'
 
-const AllBooksComponent = ({books, setBooks, setNewBook, bookFacade, setEditMode}) => {
+const AllBooksComponent = ({books, setBooks, setNewBook, bookFacade, setEditMode, setHasChanged}) => {
 
   const sortBooks = e => {
     const value = e.target.value
@@ -29,7 +29,7 @@ const AllBooksComponent = ({books, setBooks, setNewBook, bookFacade, setEditMode
           <button value={"rating"} onClick={sortBooks}>Sort by rating</button> <br /> <br />
           <input style={{height: "32px", fontSize: "22px"}} type="text" placeholder='Search book'/>
         </div>
-        {books.length > 0 ? <Books books={books} setBooks={setBooks} bookFacade={bookFacade} setEditMode={setEditMode} setNewBook={setNewBook}/> : <h4>Nothing to see here.. ;)</h4>}
+        {books.length > 0 ? <Books books={books} setBooks={setBooks} bookFacade={bookFacade} setEditMode={setEditMode} setNewBook={setNewBook} setHasChanged={setHasChanged}/> : <h4>Nothing to see here.. ;)</h4>}
     </div>
   )
 }

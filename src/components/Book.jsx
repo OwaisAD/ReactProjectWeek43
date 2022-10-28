@@ -1,6 +1,6 @@
 import {FaTimes, FaPen, FaStar} from "react-icons/fa"
 
-const Book = ({book, setBooks, setNewBook, bookFacade, setEditMode}) => {
+const Book = ({book, setBooks, setNewBook, bookFacade, setEditMode, setHasChanged}) => {
     let starElement = <FaStar style={{color:"yellow"}}/>
     let starElement2 = (<><FaStar style={{color:"yellow"}}/><FaStar style={{color:"yellow"}}/></>)
     let starElement3 = (<><FaStar style={{color:"yellow"}}/><FaStar style={{color:"yellow"}}/><FaStar style={{color:"yellow"}}/></>)
@@ -23,9 +23,8 @@ const Book = ({book, setBooks, setNewBook, bookFacade, setEditMode}) => {
     }
 
     const deleteBook = async id => {
-
       bookFacade.deleteBook(id)
-      bookFacade.getAllBooks().then(data => setBooks(data))
+      setHasChanged(true)
     }
 
   return (

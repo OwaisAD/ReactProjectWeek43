@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 
-const InputBookComponent = ({bookFacade, books, newBook, setBooks, setNewBook, editMode, setEditMode}) => {
+const InputBookComponent = ({bookFacade, books, newBook, setBooks, setNewBook, editMode, setEditMode, setHasChanged}) => {
 
   const update = (event) => {
     const value = event.target.value
@@ -15,6 +15,7 @@ const InputBookComponent = ({bookFacade, books, newBook, setBooks, setNewBook, e
     if(newBook.id === "") {
       newBook.id = uuidv4()
       bookFacade.createBook(newBook)
+      setHasChanged(true)
   } else { // if id already exists we just want to change it
       let bookToEdit = {
         id: newBook.id,
@@ -28,7 +29,7 @@ const InputBookComponent = ({bookFacade, books, newBook, setBooks, setNewBook, e
       setEditMode(false)
   }
     
-    bookFacade.getAllBooks().then(data => {setBooks(data); console.log(data)})
+    setHasChanged(true)
     setNewBook({id: "", title: "", author: "", rating: "", "year_published": ""})
 
   }

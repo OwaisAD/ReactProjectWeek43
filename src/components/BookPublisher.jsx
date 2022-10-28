@@ -40,6 +40,7 @@ const BookPublisher = (props) => {
           setBooks={props.setBooks}
           editMode={editMode}
           setEditMode={setEditMode}
+          setHasChanged={props.setHasChanged}
         />
         <AllBooksComponent
           setNewBook={setNewBook}
@@ -47,6 +48,7 @@ const BookPublisher = (props) => {
           setBooks={props.setBooks}
           bookFacade={props.bookFacade}
           setEditMode={setEditMode}
+          setHasChanged={props.setHasChanged}
         />
       </div>
     </div>
