@@ -6,15 +6,10 @@ import { useEffect } from 'react'
 import bookFacade from './facades/bookFacade'
 
 function App() {
-  const [count, setCount] = useState(0)
   const [books, setBooks] = useState([])
 
   useEffect(() => {
-    const getBooks = async () => {
-      const booksFromServer = await bookFacade.getAllBooks()
-      setBooks(booksFromServer)
-    }
-    getBooks()
+    bookFacade.getAllBooks().then(data => setBooks(data))
   }, [])
 
   return (

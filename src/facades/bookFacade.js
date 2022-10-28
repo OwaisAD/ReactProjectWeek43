@@ -12,41 +12,41 @@ const makeOptions = (method, body) => {
     return opts
 }
 
-const handleHttpErrors = (res) => {
+const handleHttpErrors = async (res) => {
     if (!res.ok) {
-        return Promise.reject({
+        return await Promise.reject({
             status: res.status,
             fullError: res.json()
         })
     }
-    return res.json()
+    return await res.json()
 }
 
-const getAllBooks = () => {
-    return fetch(`http://localhost:4000/books`)
+const getAllBooks = async () => {
+    return await fetch(`http://localhost:4000/books`)
         .then(handleHttpErrors)
 }
 
-const getBookById = (id) => {
-    return fetch(`http://localhost:4000/books/${id}`)
+const getBookById = async (id) => {
+    return await fetch(`http://localhost:4000/books/${id}`)
         .then(handleHttpErrors)
 }
 
-const createBook = (user) => {
-    const options = makeOptions(`POST`, user)
-    return fetch(`http://localhost:4000/books`, options)
+const createBook = async (book) => {
+    const options = makeOptions(`POST`, book)
+    return await fetch(`http://localhost:4000/books`, options)
         .then(handleHttpErrors)
 }
 
-const updateBook = (id, user) => {
-    const options = makeOptions(`PUT`, user)
-    return fetch(`http://localhost:4000/books/${id}`, options)
+const updateBook = async (id, book) => {
+    const options = makeOptions(`PUT`, book)
+    return await fetch(`http://localhost:4000/books/${id}`, options)
         .then(handleHttpErrors)
 }
 
-const deleteBook = (id) => {
+const deleteBook = async (id) => {
     const options = makeOptions(`DELETE`)
-    return fetch(`http://localhost:4000/books/${id}`, options)
+    return await fetch(`http://localhost:4000/books/${id}`, options)
         .then(handleHttpErrors)
 }
 

@@ -55,6 +55,10 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.ioComp {
+  display: flex;
+  flex-direction: row;
+}
 
 .BookComponentDiv {
   background-color: rgba(123, 63, 63, 0.87);
@@ -69,18 +73,13 @@ button:focus-visible {
   margin: 2px;
 }
 
-.ioComp {
-  display: flex;
-  flex-direction: row;
-}
-
 .book {
   background: #373232a8;
   margin: 10px;
   padding: 5px;
   border-radius: 5%;
   /*cursor: pointer;*/
-  width: 300px;
+  width: 350px;
   height: 176px;
   max-height: 200px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -98,12 +97,15 @@ button:focus-visible {
 }
 
 .bookTitle {
-  max-width: 200px;
+  max-width: 250px;
 }
 
+
 form input {
-  height: 24px;
+  height: 28px;
   margin: 4px 0;
+  min-width: 250px;
+  font-size: 18px;
 }
 
 .loginStatus {
@@ -114,4 +116,21 @@ form input {
 
 .loginStatus button {
   float:left;
+}
+
+.circle {
+  background-color: grey;
+  width: 75px;
+  height: 75px;
+  line-height: 75px;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.bookCount {
+  font-size: 40px;
+  font-weight: 500;
 }
